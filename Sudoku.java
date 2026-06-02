@@ -44,10 +44,10 @@ public class Sudoku {
             return false;
         }
         else {
-            for(int k=1;k<10;k++){
-                if (est_Valid(parligne,parcolonne,k)){
-                    grille[parligne][parcolonne]=k;
-                    if (Resoudre(parligne,parcolonne+1)){
+            for (int k = 1; k < 10; k++) {
+                if (est_Valid(parligne, parcolonne, k)) {
+                    grille[parligne][parcolonne] = k;
+                    if (Resoudre(parligne, parcolonne + 1)) {
                         return true;
                     }
                     grille[parligne][parcolonne]=0;

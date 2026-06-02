@@ -30,8 +30,10 @@ public class sudokuAchraf {
 
 
     public static boolean solveur(int[][] grille) {
+
         for (int l = 0; l < 9; l++) {
             for (int c = 0; c < 9; c++) {
+
                 if (grille[l][c] == 0) {
                     for (int i = 1; i <= 9; i++) {
                         if (estValide(grille, l, c, i)) {
