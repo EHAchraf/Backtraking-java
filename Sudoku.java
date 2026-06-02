@@ -8,8 +8,8 @@ public class Sudoku {
         grille=pargrille;
     }
     public Boolean  est_Valid(int nblig,int nbcol,int solutio){
-        int cassex = nblig /3*3;
-        int cassey =nbcol /3*3;
+        int cassex = (nblig /3)*3;
+        int cassey =(nbcol /3)*3;
         for(int i=0;i<Taille;i++) {
             if (grille[nblig][i] == solutio) {
                 return false;
@@ -38,7 +38,10 @@ public class Sudoku {
             return Resoudre(parligne+1,0);
         }
         else if (grille[parligne][parcolonne]!=0) {
-            return Resoudre(parligne,parcolonne+1);
+            if (Resoudre(parligne, parcolonne+1)){
+                return true;
+            }
+            return false;
         }
         else {
             for(int k=1;k<10;k++){
